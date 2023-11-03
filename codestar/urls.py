@@ -22,3 +22,5 @@ urlpatterns = [
     path('', include('blog.urls'), name='blog_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+# Added in an effort to deploy to Heroku
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
